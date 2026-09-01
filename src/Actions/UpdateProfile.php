@@ -14,7 +14,7 @@ final class UpdateProfile
             'locale' => $update->locale,
             'timezone' => $update->timezone,
             'theme_preference' => $update->theme,
-        ], fn (?string $value): bool => $value !== null))->save();
+        ], fn ($value) => $value !== null))->save();
 
         return $profile->refresh();
     }
